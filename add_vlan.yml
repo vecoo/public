@@ -3,13 +3,13 @@
   gather_facts: no
 
   vars:
-    vlan: 10
+    vlan: 18
 
   tasks:
      - name: Create vlan
        ios_vlan:
          vlan_id: "{{ vlan }}"
-         name: test-vlan
+         name: test-vlan1
          state: present
 
      - name: Add interfaces to VLAN
