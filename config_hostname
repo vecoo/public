@@ -1,0 +1,18 @@
+---
+- name: BACKUP ROUTER CONFIGURATIONS
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+  
+- name: configure top level configuration
+  cisco.ios.ios_config:
+    lines: hostname {{ inventory_hostname }}
+
+- name: configure interface settings
+  cisco.ios.ios_config:
+    lines:
+    - description test interface
+    - ip address 172.31.1.1 255.255.255.0
+    parents: interface GigabitEthernet3/3
