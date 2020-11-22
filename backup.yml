@@ -1,16 +1,19 @@
 ---
-- hosts: localhost
-  gather_facts: false
-  vars:
-    state: present
+- hosts: CSR-01
+  gather_facts: true
+  connection: local
+
   tasks:
-  - name: Create Policy
-    na_ontap_export_policy:
-      state: "{{ state }}"
-      name: "{{ volname }}"
-      vserver: "{{ vserver }}"
-      hostname: "{{ hostname }}"
-      username: "{{ netapp_username }}"
-      password: "{{ netapp_password }}"
-      https: true
-      validate_certs: false
+   - name: show run 
+   ios_command:
+   commands:
+     - show run 
+     host: "{{ ansible_host }}"
+     username: roger
+     password: password
+     register: config
+
+  - name: save output to /etc/ansible/backups 
+  copy: 
+  content: "{{ config.stdout[0] }}"
+  dest: "/etc/ansible/backups/show_run_{{ inventory_hostname }}.txt"
