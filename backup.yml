@@ -8,8 +8,8 @@
        ios_command:
          commands:
      - show run 
-       host: "{{ inventory_hostname }}"
-  #   username: roger
+    #   host: "{{ inventory_hostname }}"
+  #   usernme: roger
    #  password: password
        register: config
 
