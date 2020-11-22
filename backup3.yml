@@ -8,9 +8,9 @@
   tasks:
      - name: configurable backup path
        ios_config:
-         src: ios_template.j2
+   #      src: ios_template.j2
          backup: yes
          backup_options:
            filename: backup.cfg
-           dir_path: /home/user
+           dir_path: /home/slimo
 
