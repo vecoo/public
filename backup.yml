@@ -8,7 +8,7 @@
        ios_command:
          commands:
      - show run 
-       #host: "{{ ansible_host }}"
+       host: "{{ ansible_host }}"
   #   username: roger
    #  password: password
        register: config
