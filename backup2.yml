@@ -13,4 +13,4 @@
     - name: RENAME BACKUP
       copy:
         src: "{{config_output.backup_path}}"
-        dest: "./backup/{{inventory_hostname}}.config"      
+        dest: "/home/slimo/{{inventory_hostname}}.config"      
