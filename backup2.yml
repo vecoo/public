@@ -13,4 +13,4 @@
     - name: RENAME BACKUP
       copy:
         src: "{{config_output.backup_path}}"
-        dest: "/{{inventory_hostname}}aha.config"      
+        dest: "~home/{{inventory_hostname}}aha.config"      
