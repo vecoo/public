@@ -7,13 +7,13 @@
      - name: show run 
        ios_command:
          commands:
-     - show run 
+     - show run
+         register: config
     #   host: "{{ inventory_hostname }}"
   #   usernme: roger
    #  password: password
-       register: config
-
-     - name: save output to /etc/ansible/backups 
+    
+    - name: save output to /etc/ansible/backups 
        copy: 
        content: "{{ config.stdout[0] }}"
        dest: "/etc/ansible/backups/show_run_{{ inventory_hostname }}.txt"
