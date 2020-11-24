@@ -7,7 +7,7 @@
   tasks:
   - name: Check System Device
     ios_command:
-      commands: show system
+      commands: show version
     register: system
     
   - debug: msg="{{ system.stdout}}"
