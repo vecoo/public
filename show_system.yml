@@ -1,0 +1,13 @@
+  
+---
+- hosts: all
+  gather_facts: no
+  connection: local
+  
+  tasks:
+  - name: Check System Device
+    ios_command:
+      commands: show system
+    register: system
+    
+  - debug: msg="{{ system.stdout}}"
