@@ -1,5 +1,10 @@
+---
+- name: BACKUP ROUTER CONFIGURATIONS
+  hosts: ios
+  gather_facts: no
   
-- name: Get running config
+ - tasks: 
+   - name: Get running config
      ios_command:
        commands: show run
      register: show_run
