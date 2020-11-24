@@ -1,19 +1,12 @@
 ---
 - hosts: ios
-  gather_facts: true
+  gather_facts: no
   connection: local
-
+  
   tasks:
-   - name: show run 
-   ios_command:
-   commands:
-     - show run 
-     host: "{{ inventory_hostname }}"
-     username: local
-     password: asdf
-     register: config
-
-  - name: save output to /etc/ansible/backups 
-  copy: 
-  content: "{{ config.stdout[0] }}"
-  dest: "/etc/ansible/backups/show_run_{{ inventory_hostname }}.txt"
+  - name: show clock
+    ios_command:
+      commands: show clock
+    register: clock
+  
+  - debug: msg="{{ clock.stdout}}"
