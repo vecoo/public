@@ -8,7 +8,7 @@
    ios_command:
    commands:
      - show run 
-     host: "{{ ansible_host }}"
+     host: "{{ inventory_hostname }}"
      username: local
      password: asdf
      register: config
