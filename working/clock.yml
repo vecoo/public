@@ -2,7 +2,7 @@
 - name: asdf
   hosts: ios
   gather_facts: no
-  connection: local
+  connection: network_cli
   
   tasks:
   - name: show clock
