@@ -1,9 +1,8 @@
 ---
 - name: asdf
-  ansible_network_os: cisco.ios.ios
   hosts: ios
   gather_facts: no
-  connection: network_cli
+  connection: local
   
   tasks:
   - name: show clock
