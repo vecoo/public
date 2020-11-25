@@ -2,7 +2,7 @@
 - name: asdf
   hosts: ios
   gather_facts: no
-  connection: local
+  #connection: local
   #connection: ansible.netcommon.network_cli
   
   tasks:
