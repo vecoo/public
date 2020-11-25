@@ -1,33 +1,15 @@
 ---
-- name: asdf
-  hosts: ios
-  gather_facts: no
-  connection: local
-  #connection: ansible.netcommon.network_cli
-  vars:
-     ansible_command_timeout: 30
 
+- name: Network Getting Started First Playbook
+  connection: network_cli
+  gather_facts: false
+  hosts: all
   tasks:
-    - name: run show version on remote devices
-      ios_command:
-        commands: show version
 
-    - name: run show version and check to see if output contains IOS
-      ios_command:
-        commands: show version
-        wait_for: result[0] contains IOS
+    - name: Get config for VyOS devices
+      vyos_facts:
+        gather_subset: all
 
-    - name: run multiple commands on remote nodes
-      ios_command:
-        commands:
-          - show version
-          - show interfaces
-
-    - name: run multiple commands and evaluate the output
-      ios_command:
-        commands:
-          - show version
-          - show interfaces
-        wait_for:
-          - result[0] contains IOS
-          - result[1] contains Loopback0
+    - name: Display the config
+      debug:
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
