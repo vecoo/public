@@ -4,7 +4,8 @@
   gather_facts: no
   connection: local
   #connection: ansible.netcommon.network_cli
-
+  vars:
+     ansible_command_timeout: 30
 
   tasks:
     - name: run show version on remote devices
