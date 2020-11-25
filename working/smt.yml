@@ -1,4 +1,11 @@
 ---
+- name: asdf
+  hosts: ios
+  gather_facts: no
+  connection: local
+  #connection: ansible.netcommon.network_cli
+
+
 tasks:
   - name: run show version on remote devices
     ios_command:
