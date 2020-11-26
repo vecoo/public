@@ -10,5 +10,5 @@
         config:
           - name: GigabitEthernet0/1
             ipv4:
-            - address: 192.168.0.1/24
+            - address: 9.9.9.9/24
         state: replaced
