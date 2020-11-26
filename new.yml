@@ -5,6 +5,6 @@
   gather_facts: no
   
   tasks:
-     - name: configure hostname
-       cisco.ios.ios_config:
-         lines: hostname {{ inventory_hostname }}
+    - name: configure hostname
+      cisco.ios.ios_config:
+        lines: hostname {{ inventory_hostname }}
