@@ -1,3 +1,4 @@
+---
 - name: cisco_sh_ver
   hosts: all
   gather_facts: true 
