@@ -1,13 +1,11 @@
-  
 ---
 - hosts: all
   gather_facts: no
-#  connection: local
+  connection: local
   
-tasks:
-  
+  tasks:
   - name: Check System Device
-   ios_command:
+    ios_command:
       commands: show version
     register: system
     
