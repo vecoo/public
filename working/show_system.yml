@@ -2,7 +2,7 @@
 ---
 - hosts: all
   gather_facts: no
-  connection: local
+#  connection: local
   
   tasks:
   - name: run show version on remote devices
