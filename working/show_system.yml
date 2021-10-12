@@ -4,15 +4,11 @@
   gather_facts: no
 #  connection: local
   
-  tasks:
-  - name: run show version on remote devices
-    cisco.ios.ios_command:
+
+  
+  - name: Check System Device
+   ios_command:
       commands: show version
     register: system
-  
-#  - name: Check System Device
-#   ios_command:
-#      commands: show version
-#    register: system
     
   - debug: msg="{{ system.stdout}}"
