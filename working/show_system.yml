@@ -5,9 +5,14 @@
   connection: local
   
   tasks:
-  - name: Check System Device
-    ios_command:
+  - name: run show version on remote devices
+    cisco.ios.ios_command:
       commands: show version
-    register: system
+     register: system
+  
+#  - name: Check System Device
+#   ios_command:
+#      commands: show version
+#    register: system
     
   - debug: msg="{{ system.stdout}}"
