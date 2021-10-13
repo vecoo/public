@@ -1,5 +1,4 @@
 ---
----
 - name: cisco_sh_ver
   hosts: sw02-gn3
   gather_facts: true
