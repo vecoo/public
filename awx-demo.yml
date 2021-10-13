@@ -7,10 +7,9 @@
   - name: run show version on remote devices
     cisco.ios.ios_command:
      commands:
-     - show version
+     - show ['version']
      
   - name: show run on remote devices
     become: true
     cisco.ios.ios_command:
-     commands: 
-     - show run
+     commands: ['show run']
