@@ -2,14 +2,13 @@
 - name: cisco_sh_ver
   hosts: sw02-gn3
   gather_facts: true
-  collections:
-  - name: cisco.ios
   
   tasks:
   - name: run show version on remote devices
     cisco.ios.ios_command:
      commands:
-     - show version       
+     - show version
+     
   - name: show run on remote devices
     become: true
     cisco.ios.ios_command:
