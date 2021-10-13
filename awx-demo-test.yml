@@ -1,4 +1,11 @@
 ---
+---
+- name: cisco_sh_ver
+  hosts: sw02-gn3
+  gather_facts: true
+  
+  tasks:
+ 
   - name: Replace device configuration of specified L2 interfaces with provided configuration.
     cisco.ios.ios_l2_interfaces:
       config:
