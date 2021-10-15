@@ -13,7 +13,7 @@
 
     register: config
 
-   - name: save output to /etc/ansible/backups 
+   - name: save output 
      copy: 
      content: "{{ config.stdout[0] }}"
-     dest: "/etc/ansible/backups/show_run_{{ inventory_hostname }}.txt"
+     dest: "/home/slimo/{{ inventory_hostname }}.txt"
