@@ -1,0 +1,11 @@
+---
+- name: cisco_gather
+  hosts: gns3-group
+  gather_facts: yes
+  
+  tasks:
+    
+  - name: Gather legacy and resource facts
+    cisco.ios.ios_facts:
+      gather_subset: all
+      gather_network_resources: all
