@@ -1,7 +1,7 @@
 ---
 - name: cisco_sh_ver
   hosts: gns3-group
-  gather_facts: no
+  gather_facts: yes
   
   tasks:
   
