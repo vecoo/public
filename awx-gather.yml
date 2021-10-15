@@ -1,19 +1,15 @@
 ---
 - name: cisco_gather
   hosts: gns3-group
-  gather_facts: yes
+  gather_facts: no
   
 
     
   tasks:
-  - name: show run 
-    cisco.ios.ios_command:
-    commands:
-     - show run 
-
-    register: config
-
-   - name: save output 
-     copy: 
-     content: "{{ config.stdout[0] }}"
-     dest: "/home/slimo/{{ inventory_hostname }}.txt"
+  - name: configurable backup path
+    cisco.ios.ios_config:
+      src: ios_template.j2
+      backup: yes
+      backup_options:
+        filename: backup.cfg
+        dir_path: /home/slimo
