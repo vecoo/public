@@ -6,10 +6,10 @@
   tasks:
   
   - name: Configure the login banner
-  cisco.ios.ios_banner:
-    banner: login
-    text: |
-      this is my login banner
-      that contains a multiline
-      string
-    state: present
+    cisco.ios.ios_banner:
+      banner: login
+      text: |
+        this is my login banner
+        that contains a multiline
+        string
+      state: present
