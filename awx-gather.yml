@@ -7,13 +7,13 @@
     
   tasks:
   - name: show run 
-      cisco.ios.ios_command:
-      commands:
-       - show run 
+    cisco.ios.ios_command:
+    commands:
+     - show run 
 
     register: config
 
    - name: save output to /etc/ansible/backups 
-       copy: 
-       content: "{{ config.stdout[0] }}"
-       dest: "/etc/ansible/backups/show_run_{{ inventory_hostname }}.txt"
+     copy: 
+     content: "{{ config.stdout[0] }}"
+     dest: "/etc/ansible/backups/show_run_{{ inventory_hostname }}.txt"
