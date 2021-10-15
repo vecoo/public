@@ -3,12 +3,17 @@
   hosts: gns3-group
   gather_facts: yes
   
-  tasks:
-    
-  - name: Gather legacy and resource facts
-    cisco.ios.ios_facts:
-      gather_subset: all
-      gather_network_resources: all
-    register: thefacts
 
-  - debug: var=thefacts.stdout_lines
+    
+  tasks:
+   - name: show run 
+   ios_command:
+   commands:
+     - show run 
+
+     register: config
+
+  - name: save output to /etc/ansible/backups 
+  copy: 
+  content: "{{ config.stdout[0] }}"
+  dest: "/etc/ansible/backups/show_run_{{ inventory_hostname }}.txt"
