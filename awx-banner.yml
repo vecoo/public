@@ -1,7 +1,7 @@
 ---
 - name: cisco_sh_ver
   hosts: all
-  gather_facts: true
+  gather_facts: no
   
   tasks:
   
@@ -13,3 +13,7 @@
         that contains a multiline
         string
       state: present
+      
+  - name: configure top level configuration
+    cisco.ios.ios_config:
+      lines: hostname {{ inventory_hostname }}
