@@ -5,15 +5,15 @@
 
   tasks:
    - name: show run 
-   ios_command:
-   commands:
-     - show run 
-     host: "{{ inventory_hostname }}"
-    # username: roger
-    # password: password
-     register: config
+     ios_command:
+     commands:
+       - show run 
+       host: "{{ inventory_hostname }}"
+      # username: roger
+      # password: password
+       register: config
 
-  - name: save output to /etc/ansible/backups 
-  copy: 
-  content: "{{ config.stdout[0] }}"
-  dest: "/etc/ansible/backups/show_run_{{ inventory_hostname }}.txt"
+    - name: save output to /etc/ansible/backups 
+      copy: 
+      content: "{{ config.stdout[0] }}"
+      dest: "/etc/ansible/backups/show_run_{{ inventory_hostname }}.txt"
