@@ -1,0 +1,10 @@
+---
+- hosts: gns3-group
+  gather_facts: no
+  connection: local
+  
+  tasks:
+   
+  - name: Configure change hostname Device
+    ios_config:
+      lines: hostname {{ new_hostname }}
