@@ -16,4 +16,4 @@
        ios_vlan:
          vlan_id: "{{ vlan }}"
          interfaces:
-           - GigabitEthernet3/3
+           - GigabitEthernet1/3
