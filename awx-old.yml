@@ -7,4 +7,4 @@
    
   - name: Configure change hostname Device
     ios_config:
-      lines: hostname {{ new_hostname }}
+      lines: hostname {{inventory_hostname}}
