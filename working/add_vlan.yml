@@ -1,5 +1,5 @@
 ---
-- hosts: ios
+- hosts: gns3-group
   gather_facts: no
 
   vars:
