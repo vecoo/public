@@ -17,7 +17,7 @@
       lines:
       - description test interface
       - ip address 172.31.1.1 255.255.255.0
-      parents: interface Ethernet1
+      parents: interface GigabitEthernet1/1
 
   - name: configure ip helpers on multiple interfaces
     cisco.ios.ios_config:
@@ -26,9 +26,9 @@
       - ip helper-address 172.26.3.8
       parents: '{{ item }}'
     with_items:
-    - interface Ethernet1
-    - interface Ethernet2
-    - interface GigabitEthernet1
+    - interface GigabitEthernet1/2
+    - interface GigabitEthernet1/3
+    - interface GigabitEthernet1/0
 
   - name: configure policer in Scavenger class
     cisco.ios.ios_config:
@@ -73,7 +73,7 @@
         # - shut
       - shutdown
       # parents: int gig1/0/11
-      parents: interface GigabitEthernet1/0/11
+      parents: interface GigabitEthernet0/3
 
   # Set boot image based on comparison to a group_var (version) and the version
   # that is returned from the `ios_facts` module
